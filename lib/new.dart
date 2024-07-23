@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_burger_app/order%20confirm.dart';
 
 class New extends StatefulWidget {
   const New({super.key});
@@ -293,24 +295,30 @@ class _NewState extends State<New> {
                     ),
                   ),
                   SizedBox(width: 50.w,),
-                  Container(
-                    width: 220.w,
-                    height: 70.h,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Color(0xff3C2F2F),
-                      borderRadius: BorderRadius.circular(17.r),
-                    ),
-                    child:
-                    Text(
-                      "ORDER NOW",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 25.sp,
-                        color: Color(0xffFFFFFF),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_)=>Orderconfirm()));
+                    },
+                    child: Container(
+                      width: 220.w,
+                      height: 70.h,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Color(0xff3C2F2F),
+                        borderRadius: BorderRadius.circular(17.r),
                       ),
-                    ),
+                      child:
+                      Text(
+                        "ORDER NOW",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 25.sp,
+                          color: Color(0xffFFFFFF),
+                        ),
+                      ),
 
+                    ),
                   ),
                 ],
               ),
